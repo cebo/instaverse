@@ -1,0 +1,1544 @@
+<!doctype html>
+<html ng-app="Instagram">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instaverse</title>
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!--<link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/sweet-alert.css">-->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link data-require="font-awesome@*" data-semver="4.3.0" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="//cdn.jsdelivr.net/angular.textangular/1.3.7/textAngular.css">
+   <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+  <!-- dependents -->
+  <link href="css/slabtext.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="css/keyframes.css">
+  <link rel="stylesheet" href="css/pageTransitions.css">
+  <link rel="stylesheet" href="css/carousel.css" />
+  <link href="css/lightbox.css" rel="stylesheet" />
+
+  <!-- responsive style -->
+  <link rel="stylesheet" type="text/css" href="css/media.css">
+
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+<div class="side">
+
+    <a href="#"> <img ng-src="{{currentUser.picture}}"></a>
+    <ul class="stats">
+      <li class="button"><a href="#">Contribute A Verse</a></li>
+      <li><a href="#"><span>8</span>verses</a></li>
+      <li><a href="#"><span>1,812</span>Followers</a></li>
+      <li><a href="#"><span>231</span>Following</a></li>
+      <li><a href="#">26 Favorites</a></li>
+      <li><a href="#">18 Dogears</a></li>
+       <li ng-if="isAuthenticated()"><a ng-click="logout()" href="">Logout</a></li>
+      <li><a href="">Logout</a></li>
+      <li><a href="#/search">Photos</a></li>
+    </ul>
+
+</div>
+
+
+<div class="contain">
+
+      <!--<div ng-view></div>--
+
+
+      <div class="container">
+
+            <div class="nav">
+
+                  <div class="topbar">
+                      <a href="#" class="close ion-ios-arrow-thin-left"></a>
+                      <a href="#" class="settings ion-ios-gear"></a>
+                      <a href="" class="logo">Instaverse</a>
+                      <li><a href="#/">Home</a></li>
+                      <li ng-if="!isAuthenticated()"><a href="#/login">Log in</a></li>
+                      <li ng-if="!isAuthenticated()"><a href="#/signup">Sign up</a></li>
+                      <li ng-if="isAuthenticated()"><a ng-click="logout()" href="">Logout</a></li>
+                       <li><a href="#/verse">Verses</a></li>
+                        <li><a href="#/search">Photos</a></li>
+                  </div>
+
+                  <div class="bottombar">
+
+                        <a href="#" class="plus ion-ios-plus-empty" data-pack="default" data-tags=""></a>
+                        <div class="searchy">
+                            <input type="text" placeholder="Search Your Verses">
+                        </div>
+
+                        <ul class="switcher">
+                          <li><a href="#">Published</a></li>
+                          <li><a href="#">Unpublished</a></li>
+                        </ul>
+
+                        <div class="clear"></div>
+
+                  </div>
+
+            </div>
+
+
+
+            <div ng-view></div>
+
+
+
+
+ </div>
+
+</div>
+
+
+-->
+<div class="wrapper">
+  <!-- Preloader -->
+  <div id="preloader">
+    <div id="status"></div>
+  </div>
+
+  <!-- Container with an id -->
+    <div id="main" class="m-scene">
+      <div class="hiddenauthor">instaverse<a href="#"></a></div></div>
+      <a class="closer" href="#"></a>
+
+
+    <!-- Navigation -->
+    <div class="navigation">
+      <a class="navbutt button" href="#">Login</a>
+      <!--<a href="#" class="openleftnav"><i class="flaticon-back28"></i></a>-->
+      <a href="#" class="openrightnav"><i class="flaticon-menu33"></i></a>
+      <a class="preorder" href="#">Preorder Vol 1</a>
+      <a href="#" class="closeleftnav"><i class="flaticon-cross80"></i></a>
+      <a href="#" class="closerightnav"><i class="flaticon-cross80"></i></a>
+    </div>
+
+        <!-- // Navigation -->
+
+        <div class="lining">
+
+          <div class="scene_element scene_element--fadein">
+
+
+              <div class="heightset">
+                <div class="fixer"></div>
+                <div class="checker"></div>
+              </div>
+
+
+
+              <div class="introspacer">
+
+                <div class="homecontainer">
+
+                  <section class="home-intro" style="background-image: url(images/type2.jpg);">
+
+                    <div class="home-intro-copy">
+
+                      <div class="liner">Instaverse</div>
+
+                      <h1 class="slabtextdone">a Picture</h1>
+                      <h1 class="slabtextdone little">is worth a thousand</h1>
+                      <h1 class="slabtextdone big">Words</h1>
+
+                      <div class="cta">
+
+                        <a href="#" class="button">Sign in Via Instagram</a>
+
+                      </div>
+
+                    </div>
+
+
+
+
+                  </section>
+
+                </div>
+
+              </div>
+
+
+
+
+        <section class="postlist">
+
+          <div class="instawelcome">
+
+            <div class="container">
+
+              <div class="leftwelcome">
+
+                <h2>inspired storytelling, beyond timelines</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar ultrices nibh ac porta. Mauris magna ligula, mattis laoreet diam in, hendrerit consectetur augue. Morbi sed magna aliquam, tempus arcu et, fermentum augue. Aliquam sem massa, dignissim euismod massa sit amet, blandit pellentesque sapien. Fusce bibendum in dui ut volutpat. Sed vel aliquet odio. </p>
+
+                <h3><a href="#" class="button">Sign in via instagram</a>&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;o<a href="#">Preorder Vol 1</a></h3>
+
+
+              </div>
+
+              <div class="rightwelcome">
+
+                <a href="#"><img src="images/book.png" alt="Instaverse Publication" class="instabook /"></a>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="querybar">
+
+            <div class="searcher">
+
+              <input class="silentsearch" type="text" placeholder="Search and find what you need"/>
+
+            </div>
+
+            <ul class="dripper">
+
+              <li>
+                <a href="#" class="filter" data-filter="all">Filter by Category</a>
+                <ul class="drip">
+                  <li><a href="#">Oldest Essays</a>
+                    <ul class="drop">
+                      <li><a class="filter" data-filter="webdesign" href="page.html">By Popularity</a></li>
+                      <li><a href="#">Category</a></li>
+                      <li><a href="#">Category</a></li>
+                      <li><a href="#">Category</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">By Popularity</a>
+                    <ul class="drop">
+                      <li><a href="#">By Popularity</a></li>
+                      <li><a href="#">Category</a></li>
+                      <li><a href="#">Category</a></li>
+                      <li><a href="#">Category</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Category</a></li>
+                  <li><a href="#">Category</a></li>
+                  <li><a href="#">Category</a></li>
+                  <li><a href="#">WISHYAJDjsdjfsdf</a>
+                    <ul class="drop">
+                      <li><a href="#">By Popularity</a></li>
+                      <li><a href="#">Category</a></li>
+                      <li><a href="#">Category</a></li>
+                      <li><a href="#">Category</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <div class="clear"></div>
+
+          </div>
+
+          <div class="posts">
+
+            <div class="post count1 webdesign">
+
+              <div class="whyhello">
+
+                <p class="date">09 09 14</p>
+
+                <h3><a href="#">This is the fault in our stars</a></h3>
+
+              </div>
+
+
+              <div class="dearfriend">
+
+                <div class="p-lining">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">We lose ourselves so we might finde a way back</a></h3>
+
+                  <p class="auth"><a href="#">Cornelius Hosea Campbell</a></p>
+
+                  <h4 class="cats">In <a href="#">Thoughts. Essays, Happiness</a></h4>
+
+                </div>
+
+                <a href="#" class="letsgo"><i class="flaticon-back28"></i></a>
+
+
+              </div>
+
+              <div class="innerpost" style="background-image: url(images/5.jpg);"></div>
+
+            </div>
+
+            <div class="post count2" style="">
+
+              <div class="whyhello">
+
+                <p class="date">09 09 14</p>
+
+                <h3><a href="#">This is the fault in our stars</a></h3>
+
+              </div>
+
+
+              <div class="dearfriend">
+
+                <div class="p-lining">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="post.html">We lose ourselves so we might finde a way back</a></h3>
+
+                  <p class="auth"><a href="post.html">Cornelius Hosea Campbell</a></p>
+
+                  <h4 class="cats">In <a href="#">Thoughts. Essays, Happiness</a></h4>
+
+                </div>
+
+                <a href="post.html" class="letsgo"><i class="flaticon-back28"></i></a>
+
+
+              </div>
+
+              <div class="innerpost" style="background-image: url(images/edited.jpg);"></div>
+
+            </div><!-- end count 2 -->
+
+
+
+
+            <div class="post count3 webdesign" style="">
+
+
+              <div class="whyhello">
+
+                <p class="date">09 09 14</p>
+
+                <h3><a href="#">This is the fault in our stars</a></h3>
+
+              </div>
+
+
+              <div class="dearfriend">
+
+                <div class="p-lining">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">We lose ourselves so we can find a way back</a></h3>
+
+                  <p class="auth"><a href="#">Cornelius Hosea Campbell</a></p>
+
+                  <h4 class="cats">In <a href="#">Thoughts</a>, <a href="#">Essays</a>, <a href="#">Happiness</a></h4>
+
+                </div>
+
+                <a href="#" class="letsgo"><i class="flaticon-back28"></i></a>
+
+
+              </div>
+              <div class="innerpost" style="background-image: url(images/3.jpg);"></div>
+
+            </div><!-- end count 3 -->
+
+
+            <div class="post count4" style="">
+
+              <div class="whyhello">
+
+                <p class="date">09 09 14</p>
+
+                <h3><a href="#">This is the fault in our stars</a></h3>
+
+              </div>
+
+
+              <div class="dearfriend">
+
+                <div class="p-lining">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">We lose ourselves so we might finde a way back</a></h3>
+
+                  <p class="auth"><a href="#">Cornelius Hosea Campbell</a></p>
+
+                  <h4 class="cats">In <a href="#">Thoughts. Essays, Happiness</a></h4>
+
+                </div>
+
+                <a href="#" class="letsgo"><i class="flaticon-back28"></i></a>
+
+
+              </div>
+
+              <div class="innerpost" style="background-image: url(images/1.jpg);"></div>
+
+            </div><!-- end count 4 -->
+
+
+            <div class="post count5 third noimage" style="">
+
+              <div class="whyhello">
+
+                <p class="date">09 09 14</p>
+
+                <h3><a href="#">This is the fault in our stars</a></h3>
+
+              </div>
+
+
+              <div class="dearfriend">
+
+                <div class="p-lining">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">We lose ourselves so we can find a way back</a></h3>
+
+                  <p class="auth"><a href="#">Cornelius Hosea Campbell</a></p>
+
+                  <h4 class="cats">In <a href="#">Thoughts</a>, <a href="#">Essays</a>, <a href="#">Happiness</a></h4>
+
+                </div>
+
+                <a href="#" class="letsgo"><i class="flaticon-back28"></i></a>
+
+
+              </div>
+
+            </div>
+
+            <div class="post count6">
+
+                <div class="whyhello">
+
+                <p class="date">09 09 14</p>
+
+                <h3><a href="#">This is the fault in our stars</a></h3>
+
+              </div>
+
+
+              <div class="dearfriend">
+
+                <div class="p-lining">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">We lose ourselves so we might finde a way back</a></h3>
+
+                  <p class="auth"><a href="#">Cornelius Hosea Campbell</a></p>
+
+                  <h4 class="cats">In <a href="#">Thoughts. Essays, Happiness</a></h4>
+
+                </div>
+
+                <a href="#" class="letsgo"><i class="flaticon-back28"></i></a>
+
+
+              </div>
+
+              <div class="innerpost" style="background-image: url(images/6.jpg);"></div>
+
+            </div><!-- end count 6 -->
+
+
+
+            <div class="post count7">
+
+                <div class="whyhello">
+
+                <p class="date">09 09 14</p>
+
+                <h3><a href="#">This is the fault in our stars</a></h3>
+
+              </div>
+
+
+              <div class="dearfriend">
+
+                <div class="p-lining">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">We lose ourselves so we might finde a way back</a></h3>
+
+                  <p class="auth"><a href="#">Cornelius Hosea Campbell</a></p>
+
+                  <h4 class="cats">In <a href="#">Thoughts. Essays, Happiness</a></h4>
+
+                </div>
+
+                <a href="#" class="letsgo"><i class="flaticon-back28"></i></a>
+
+
+              </div>
+
+              <div class="innerpost" style="background-image: url(images/7.jpg);"></div>
+
+
+            </div><!-- end count 7 -->
+
+
+
+            <div class="post count8 noimage" style="">
+
+
+              <div class="whyhello">
+
+                <p class="date">09 09 14</p>
+
+                <h3><a href="#">This is the fault in our stars</a></h3>
+
+              </div>
+
+
+              <div class="dearfriend">
+
+                <div class="p-lining">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">We lose ourselves so we can find a way back</a></h3>
+
+                  <p class="auth"><a href="#">Cornelius Hosea Campbell</a></p>
+
+                  <h4 class="cats">In <a href="#">Thoughts</a>, <a href="#">Essays</a>, <a href="#">Happiness</a></h4>
+
+                </div>
+
+                <a href="#" class="letsgo"><i class="flaticon-back28"></i></a>
+
+
+              </div>
+
+
+            </div><!-- end count 8 -->
+
+            <div class="post count9">
+
+
+                <div class="whyhello">
+
+                <p class="date">09 09 14</p>
+
+                <h3><a href="#">This is the fault in our stars</a></h3>
+
+              </div>
+
+
+              <div class="dearfriend">
+
+                <div class="p-lining">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">We lose ourselves so we might finde a way back</a></h3>
+
+                  <p class="auth"><a href="#">Cornelius Hosea Campbell</a></p>
+
+                  <h4 class="cats">In <a href="#">Thoughts. Essays, Happiness</a></h4>
+
+                </div>
+
+                <a href="#" class="letsgo"><i class="flaticon-back28"></i></a>
+
+
+              </div>
+              <div class="innerpost" style="background-image: url(images/10.jpg);"></div>
+
+            </div><!-- end count 9 -->
+
+
+            <div class="post count10" style="">
+
+
+                <div class="whyhello">
+
+                <p class="date">09 09 14</p>
+
+                <h3><a href="#">This is the fault in our stars</a></h3>
+
+              </div>
+
+
+              <div class="dearfriend">
+
+                <div class="p-lining">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">We lose ourselves so we might finde a way back</a></h3>
+
+                  <p class="auth"><a href="#">Cornelius Hosea Campbell</a></p>
+
+                  <h4 class="cats">In <a href="#">Thoughts. Essays, Happiness</a></h4>
+
+                </div>
+
+                <a href="#" class="letsgo"><i class="flaticon-back28"></i></a>
+
+
+              </div>
+
+              <div class="innerpost" style="background-image: url(images/11.jpg);"></div>
+
+
+            </div><!-- end count 10 -->
+
+
+
+
+<div class="post count1 webdesign">
+
+              <div class="whyhello">
+
+                <p class="date">09 09 14</p>
+
+                <h3><a href="#">This is the fault in our stars</a></h3>
+
+              </div>
+
+
+              <div class="dearfriend">
+
+                <div class="p-lining">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">We lose ourselves so we might finde a way back</a></h3>
+
+                  <p class="auth"><a href="#">Cornelius Hosea Campbell</a></p>
+
+                  <h4 class="cats">In <a href="#">Thoughts. Essays, Happiness</a></h4>
+
+                </div>
+
+                <a href="#" class="letsgo"><i class="flaticon-back28"></i></a>
+
+
+              </div>
+
+              <div class="innerpost" style="background-image: url(images/5.jpg);"></div>
+
+            </div>
+
+            <div class="post count2" style="">
+
+              <div class="whyhello">
+
+                <p class="date">09 09 14</p>
+
+                <h3><a href="#">This is the fault in our stars</a></h3>
+
+              </div>
+
+
+              <div class="dearfriend">
+
+                <div class="p-lining">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">We lose ourselves so we might finde a way back</a></h3>
+
+                  <p class="auth"><a href="#">Cornelius Hosea Campbell</a></p>
+
+                  <h4 class="cats">In <a href="#">Thoughts. Essays, Happiness</a></h4>
+
+                </div>
+
+                <a href="#" class="letsgo"><i class="flaticon-back28"></i></a>
+
+
+              </div>
+
+              <div class="innerpost" style="background-image: url(images/2.jpg);"></div>
+
+            </div><!-- end count 2 -->
+
+
+
+
+            <div class="post count3 webdesign" style="">
+
+
+              <div class="whyhello">
+
+                <p class="date">09 09 14</p>
+
+                <h3><a href="#">This is the fault in our stars</a></h3>
+
+              </div>
+
+
+              <div class="dearfriend">
+
+                <div class="p-lining">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">We lose ourselves so we can find a way back</a></h3>
+
+                  <p class="auth"><a href="#">Cornelius Hosea Campbell</a></p>
+
+                  <h4 class="cats">In <a href="#">Thoughts</a>, <a href="#">Essays</a>, <a href="#">Happiness</a></h4>
+
+                </div>
+
+                <a href="#" class="letsgo"><i class="flaticon-back28"></i></a>
+
+
+              </div>
+              <div class="innerpost" style="background-image: url(images/3.jpg);"></div>
+
+            </div><!-- end count 3 -->
+
+
+            <div class="post count4" style="">
+
+              <div class="whyhello">
+
+                <p class="date">09 09 14</p>
+
+                <h3><a href="#">This is the fault in our stars</a></h3>
+
+              </div>
+
+
+              <div class="dearfriend">
+
+                <div class="p-lining">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">We lose ourselves so we might finde a way back</a></h3>
+
+                  <p class="auth"><a href="#">Cornelius Hosea Campbell</a></p>
+
+                  <h4 class="cats">In <a href="#">Thoughts. Essays, Happiness</a></h4>
+
+                </div>
+
+                <a href="#" class="letsgo"><i class="flaticon-back28"></i></a>
+
+
+              </div>
+
+              <div class="innerpost" style="background-image: url(images/1.jpg);"></div>
+
+            </div><!-- end count 4 -->
+
+
+            <div class="post count5 third noimage" style="">
+
+              <div class="whyhello">
+
+                <p class="date">09 09 14</p>
+
+                <h3><a href="#">This is the fault in our stars</a></h3>
+
+              </div>
+
+
+              <div class="dearfriend">
+
+                <div class="p-lining">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">We lose ourselves so we can find a way back</a></h3>
+
+                  <p class="auth"><a href="#">Cornelius Hosea Campbell</a></p>
+
+                  <h4 class="cats">In <a href="#">Thoughts</a>, <a href="#">Essays</a>, <a href="#">Happiness</a></h4>
+
+                </div>
+
+                <a href="#" class="letsgo"><i class="flaticon-back28"></i></a>
+
+
+              </div>
+
+            </div>
+
+            <div class="post count6">
+
+                <div class="whyhello">
+
+                <p class="date">09 09 14</p>
+
+                <h3><a href="#">This is the fault in our stars</a></h3>
+
+              </div>
+
+
+              <div class="dearfriend">
+
+                <div class="p-lining">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">We lose ourselves so we might finde a way back</a></h3>
+
+                  <p class="auth"><a href="#">Cornelius Hosea Campbell</a></p>
+
+                  <h4 class="cats">In <a href="#">Thoughts. Essays, Happiness</a></h4>
+
+                </div>
+
+                <a href="#" class="letsgo"><i class="flaticon-back28"></i></a>
+
+
+              </div>
+
+              <div class="innerpost" style="background-image: url(images/6.jpg);"></div>
+
+            </div><!-- end count 6 -->
+
+
+
+            <div class="post count7">
+
+                <div class="whyhello">
+
+                <p class="date">09 09 14</p>
+
+                <h3><a href="#">This is the fault in our stars</a></h3>
+
+              </div>
+
+
+              <div class="dearfriend">
+
+                <div class="p-lining">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">We lose ourselves so we might finde a way back</a></h3>
+
+                  <p class="auth"><a href="#">Cornelius Hosea Campbell</a></p>
+
+                  <h4 class="cats">In <a href="#">Thoughts. Essays, Happiness</a></h4>
+
+                </div>
+
+                <a href="#" class="letsgo"><i class="flaticon-back28"></i></a>
+
+
+              </div>
+
+              <div class="innerpost" style="background-image: url(images/7.jpg);"></div>
+
+
+            </div><!-- end count 7 -->
+
+
+
+            <div class="post count8 noimage" style="">
+
+
+              <div class="whyhello">
+
+                <p class="date">09 09 14</p>
+
+                <h3><a href="#">This is the fault in our stars</a></h3>
+
+              </div>
+
+
+              <div class="dearfriend">
+
+                <div class="p-lining">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">We lose ourselves so we can find a way back</a></h3>
+
+                  <p class="auth"><a href="#">Cornelius Hosea Campbell</a></p>
+
+                  <h4 class="cats">In <a href="#">Thoughts</a>, <a href="#">Essays</a>, <a href="#">Happiness</a></h4>
+
+                </div>
+
+                <a href="#" class="letsgo"><i class="flaticon-back28"></i></a>
+
+
+              </div>
+
+
+            </div><!-- end count 8 -->
+
+            <div class="post count9">
+
+
+                <div class="whyhello">
+
+                <p class="date">09 09 14</p>
+
+                <h3><a href="#">This is the fault in our stars</a></h3>
+
+              </div>
+
+
+              <div class="dearfriend">
+
+                <div class="p-lining">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">We lose ourselves so we might finde a way back</a></h3>
+
+                  <p class="auth"><a href="#">Cornelius Hosea Campbell</a></p>
+
+                  <h4 class="cats">In <a href="#">Thoughts. Essays, Happiness</a></h4>
+
+                </div>
+
+                <a href="#" class="letsgo"><i class="flaticon-back28"></i></a>
+
+
+              </div>
+              <div class="innerpost" style="background-image: url(images/10.jpg);"></div>
+
+            </div><!-- end count 9 -->
+
+
+            <div class="post count10" style="">
+
+
+                <div class="whyhello">
+
+                <p class="date">09 09 14</p>
+
+                <h3><a href="#">This is the fault in our stars</a></h3>
+
+              </div>
+
+
+              <div class="dearfriend">
+
+                <div class="p-lining">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">We lose ourselves so we might finde a way back</a></h3>
+
+                  <p class="auth"><a href="#">Cornelius Hosea Campbell</a></p>
+
+                  <h4 class="cats">In <a href="#">Thoughts. Essays, Happiness</a></h4>
+
+                </div>
+
+                <a href="#" class="letsgo"><i class="flaticon-back28"></i></a>
+
+
+              </div>
+
+              <div class="innerpost" style="background-image: url(images/11.jpg);"></div>
+
+
+            </div><!-- end count 10 -->
+
+
+
+          </div>
+
+          <div class="clear"></div>
+
+
+        </section>
+
+        <section class="footer">
+          <h2></h2>
+        </section>
+
+      </div><!-- end lining -->
+
+        </div>
+
+
+
+
+    <!-- ====================== NAVIGATION SECTIONS ======================= -->
+
+    <section class="leftnav">
+
+      <div class="authorsection appearman">
+
+          <div class="hellofriend">
+            <div class="author" style="background-image: url(images/cebo.jpg);"><a href="#"></a></div>
+
+            <h3><a href="#">Cornelius Hosea Campbell</a></h3>
+
+            <p>my big life in little words</p>
+          </div>
+        </div>
+
+
+        <div class="newsletter">
+
+          <input type="text" placeholder="sign up for my newsletter">
+          <input type="submit" value="submit">
+
+
+        </div>
+
+
+        <div class="contentabs">
+
+          <div class="tabs-wrapper">
+
+            <ul class="tabs">
+              <li><a href="#writing">Featured Essays</a></li>
+            <li><a href="#portfolio">Featured Work</a></li>
+          </ul>
+          <div style="margin-bottom: 10px" class="tabs-container">
+
+            <div id="writing" class="tab-content">
+
+
+              <div class="post">
+
+
+                  <div class="whyhello">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">This is the fault in our stars</a></h3>
+
+                </div>
+
+
+                <a href="#" class="dropanchors"></a>
+                <div class="innerpost" style="background-image: url(images/2.jpg);"></div>
+
+              </div><!-- end count  -->
+
+
+              <div class="post">
+
+
+                  <div class="whyhello">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">This is the fault in our stars</a></h3>
+
+                </div>
+
+
+                <a href="#" class="dropanchors"></a>
+                <div class="innerpost" style="background-image: url(images/1.jpg);"></div>
+
+              </div><!-- end count  -->
+
+              <div class="clear"></div>
+
+              <div class="adspot">
+
+                <a href="#"><img src="images/ad.jpg" alt="ad spot" /></a>
+
+              </div>
+
+              <div class="post">
+
+
+                <div class="whyhello">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">This is the fault in our stars</a></h3>
+
+                </div>
+
+
+                <a href="#" class="dropanchors"></a>
+                <div class="innerpost" style="background-image: url(images/3.jpg);"></div>
+
+              </div><!-- end count  -->
+
+
+
+
+              <div class="post">
+
+
+                  <div class="whyhello">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">This is the fault in our stars</a></h3>
+
+                </div>
+
+
+
+                <a href="#" class="dropanchors"></a>
+                <div class="innerpost" style="background-image: url(images/1.jpg);"></div>
+
+              </div><!-- end count  -->
+
+              <div class="post">
+
+
+                  <div class="whyhello">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">WE LOSE OURSELVES SO WE MIGHT FINDE A WAY BACK</a></h3>
+
+                </div>
+
+
+                <a href="#" class="dropanchors"></a>
+                <div class="innerpost" style="background-image: url(images/10.jpg);"></div>
+
+              </div><!-- end count  -->
+
+
+              <div class="post">
+
+
+                  <div class="whyhello">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">This is the fault in our stars</a></h3>
+
+                </div>
+
+
+                <a href="#" class="dropanchors"></a>
+                <div class="innerpost" style="background-image: url(images/8.jpg);"></div>
+
+              </div><!-- end count  -->
+
+
+              <div class="post">
+
+
+                <div class="whyhello">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">This is the fault in our stars</a></h3>
+
+                </div>
+
+
+                <a href="#" class="dropanchors"></a>
+                <div class="innerpost" style="background-image: url(images/6.jpg);"></div>
+
+              </div><!-- end count  -->
+
+
+
+
+              <div class="post">
+
+
+                  <div class="whyhello">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">This is the fault in our stars</a></h3>
+
+                </div>
+
+
+
+                <a href="#" class="dropanchors"></a>
+                <div class="innerpost" style="background-image: url(images/5.jpg);"></div>
+
+              </div><!-- end count  -->
+
+
+              <div class="clear"></div>
+
+            </div>
+
+            <div id="portfolio" class="tab-content">
+
+                <div class="post">
+
+
+                  <div class="whyhello">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">This is the fault in our stars</a></h3>
+
+                </div>
+
+
+                <a href="#" class="dropanchors"></a>
+                <div class="innerpost" style="background-image: url(images/10.jpg);"></div>
+
+              </div><!-- end count  -->
+
+
+              <div class="post">
+
+
+                  <div class="whyhello">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">This is the fault in our stars</a></h3>
+
+                </div>
+
+
+                <a href="#" class="dropanchors"></a>
+                <div class="innerpost" style="background-image: url(images/8.jpg);"></div>
+
+              </div><!-- end count  -->
+
+              <div class="clear"></div>
+
+              <div class="adspot">
+
+                <a href="#"><img src="images/ad.jpg" alt="ad spot" /></a>
+
+              </div>
+
+              <div class="post">
+
+
+                <div class="whyhello">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">This is the fault in our stars</a></h3>
+
+                </div>
+
+
+                <a href="#" class="dropanchors"></a>
+                <div class="innerpost" style="background-image: url(images/6.jpg);"></div>
+
+              </div><!-- end count  -->
+
+
+
+
+              <div class="post">
+
+
+                  <div class="whyhello">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">This is the fault in our stars</a></h3>
+
+                </div>
+
+
+
+                <a href="#" class="dropanchors"></a>
+                <div class="innerpost" style="background-image: url(images/5.jpg);"></div>
+
+              </div><!-- end count  -->
+
+              <div class="post">
+
+
+                  <div class="whyhello">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">WE LOSE OURSELVES SO WE MIGHT FINDE A WAY BACK</a></h3>
+
+                </div>
+
+
+                <a href="#" class="dropanchors"></a>
+                <div class="innerpost" style="background-image: url(images/10.jpg);"></div>
+
+              </div><!-- end count  -->
+
+
+              <div class="post">
+
+
+                  <div class="whyhello">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">This is the fault in our stars</a></h3>
+
+                </div>
+
+
+                <a href="#" class="dropanchors"></a>
+                <div class="innerpost" style="background-image: url(images/8.jpg);"></div>
+
+              </div><!-- end count  -->
+
+
+              <div class="post">
+
+
+                <div class="whyhello">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">This is the fault in our stars</a></h3>
+
+                </div>
+
+
+                <a href="#" class="dropanchors"></a>
+                <div class="innerpost" style="background-image: url(images/6.jpg);"></div>
+
+              </div><!-- end count  -->
+
+
+
+
+              <div class="post">
+
+
+                  <div class="whyhello">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#">This is the fault in our stars</a></h3>
+
+                </div>
+
+
+
+                <a href="#" class="dropanchors"></a>
+                <div class="innerpost" style="background-image: url(images/5.jpg);"></div>
+
+              </div><!-- end count  -->
+
+
+              <div class="clear"></div>
+
+
+            </div>
+
+
+            <div class="clear"></div>
+
+          </div>
+        </div>
+
+
+        </div>
+
+        <p class="copyright">&copy; Scribe - 2014, by <a href="#">Cebo Campbell</a></p>
+
+      <div class="spacer"></div>
+
+    </section><!-- end left nav -->
+
+
+
+    <section class="rightnav">
+
+      <div class="navigations">
+
+        <ul>
+          <li><a href="#">home</a></li>
+          <li><a href="#">about</a></li>
+          <li class="indented">
+            <a href="#">all essays</a>
+            <ul class="subnav">
+              <li><a href="#">home</a></li>
+              <li><a href="#">about</a></li>
+              <li><a href="#">all essays</a></li>
+              <li><a href="#">portfolio</a></li>
+              <li><a href="#">featured</a></li>
+              <li><a href="#">contact</a></li>
+            </ul>
+          </li>
+          <li><a href="#">portfolio</a></li>
+          <li><a href="#">featured</a></li>
+          <li><a href="#">contact</a></li>
+        </ul>
+      </div>
+
+      <div class="socializer">
+
+        <ul>
+          <li><a href="#" class="flaticon-facebook51"></a></li>
+          <li><a href="#" class="flaticon-twitter44"></a></li>
+          <li><a href="#" class="flaticon-facebook51"></a></li>
+          <li><a href="#" class="flaticon-twitter44"></a></li>
+          <li><a href="#" class="flaticon-facebook51"></a></li>
+          <li><a href="#" class="flaticon-twitter44"></a></li>
+          <span style="display: block;" class="clear"></span>
+        </ul>
+
+      </div>
+      <div class="clear"></div>
+
+      <div class="widgets">
+
+        <form action="/" method="get" style="position: relative;">
+            <fieldset>
+                <input type="text" name="s" id="search" placeholder="Search…" value="" style="width: 89%">
+            <i class="fa fa-search"></i>
+            </fieldset>
+        </form>
+
+      </div>
+
+
+
+
+      <div class="widgets">
+
+        <h2>Buy My Latest Book</h2>
+
+        <div class="showcase">
+
+          <a href="#" class="dropanchor"><img src="images/4.jpg" alt="book title"/></a>
+
+          <h3><a href="#">The Occasion of Living</a></h3>
+
+          <a href="#" class="button">Buy It</a>
+          <a href="#" class="button">Preview It</a>
+
+        </div>
+
+
+      </div>
+
+
+
+
+      <div class="widgets">
+
+        <h2>Instagram</h2>
+
+        <div id="instafeed"></div>
+
+
+      </div>
+
+
+      <div class="widgets">
+
+        <h2>Recent Posts</h2>
+        <ul>
+          <li><a href="#">We lose ourselves so we can find a way back</a></li>
+          <li><a href="#">sent you but i really think it'll be a fresh system</a></li>
+          <li><a href="#">this is the fault in our stars</a></li>
+          <li><a href="#">the lady at the end of the street</a></li>
+          <li><a href="#">how to find yourself amid the madness</a></li>
+        </ul>
+      </div>
+
+      <div class="widgets twitter">
+
+        <h2>Follow me on Twitter</h2>
+
+        <ul>
+          <li class="tweet_first tweet_odd">
+            <a class="tweet_avatar" href="#" height="32" width="32" alt="cebocampbell's avatar" title="cebocampbell's avatar"></a>
+
+            <span class="tweet_time"><a href="http://twitter.com/cebocampbell/status/426490292553129984" title="view tweet on twitter">about 7 days ago</a></span>
+            <span class="tweet_text">When thewhitetigress and I go on road trips, she wants this on repeat. <a href="http://search.twitter.com/search?q=&amp;tag=90s&amp;lang=all" class="tweet_hashtag">#90s</a> <a href="http://instagram.com/p/jh3MedpP9H/">instagram.com/p/jh3MedpP9H/</a></span>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="widgets">
+
+        <h2>Categories</h2>
+        <ul>
+          <li><a href="#">General Thoughts</a></li>
+          <li><a href="#">Happiness</a></li>
+          <li><a href="#">Colors and Notions</a></li>
+          <li><a href="#">People</a></li>
+          <li><a href="#">how to find yourself amid the madness</a></li>
+        </ul>
+      </div>
+
+
+
+      <p class="copyright">&copy; Scribe - 2014, by <a href="#">Cebo Campbell</a></p>
+
+      <div class="spacer"></div>
+
+    </section><!-- end right nav -->
+
+      </div>
+
+</div>
+
+
+
+
+
+<script src="vendor/angular.js"></script>
+<script src="vendor/angular-route.js"></script>
+<script src="vendor/angular-messages.js"></script>
+<script src="vendor/sweet-alert.js"></script>
+<script src="vendor/satellizer.js"></script>
+<script src="node_modules/angular-resource/angular-resource.js"></script>
+
+<script src="app.js"></script>
+<script src="services/api.js"></script>
+<script src="services/verse.js"></script>
+<script src="directives/serverError.js"></script>
+<script src="controllers/home.js"></script>
+<script src="controllers/navbar.js"></script>
+<script src="controllers/login.js"></script>
+<script src="controllers/signup.js"></script>
+<script src="controllers/detail.js"></script>
+<script src="controllers/verse.js"></script>
+
+<script src="http://cdn.jsdelivr.net/g/angular.textangular@1.3.7(textAngular-rangy.min.js+textAngular-sanitize.min.js+textAngular.min.js)"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/instafeed.min.js"></script>
+<script type="text/javascript">
+var userFeed = new Instafeed({
+    get: 'user',
+    resolution: 'low_resolution',
+    userId: 5532366,
+    limit: 6,
+    accessToken: '5532366.467ede5.a35264fd4db5467e9535e37af9246a6b'
+});
+userFeed.run();
+</script>
+<script src="controllers/assets/jquery.smoothState.js"></script>
+<script src="controllers/assets/functions.js"></script>
+<script src="controllers/assets/jquery.slabtext.min.js"></script>
+<script src="controllers/assets/view.js" type="text/javascript" charset="utf-8"></script>
+<script src="controllers/assets/jquery.sticky-kit.js"></script>
+<script src="controllers/assets/lightbox.min.js"></script>
+<script src="controllers/assets/jquery.touchcarousel-1.2.js"></script>
+<script src="controllers/assets/home-execute.js"></script>
+<!--<script src="app.min.js"></script>-->
+</body>
+</html>

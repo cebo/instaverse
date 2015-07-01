@@ -1,0 +1,204 @@
+
+
+<!-- Container with an id -->
+    <div id="main" class="m-scene">
+      <div class="hiddenauthor">instaverse<a href="#"></a></div></div>
+      <a class="closer" href="#"></a>
+
+
+    <!-- Navigation -->
+    <div class="navigation">
+      <a class="navbutt button" href="#">Login</a>
+      <!--<a href="#" class="openleftnav"><i class="flaticon-back28"></i></a>-->
+      <a href="#" class="openrightnav"><i class="flaticon-menu33"></i></a>
+      <a class="preorder" href="#">Pre&nbsp;&bull;&nbsp;order Vol 1</a>
+      <a href="#" class="closeleftnav"><i class="flaticon-cross80"></i></a>
+      <a href="#" class="closerightnav"><i class="flaticon-cross80"></i></a>
+    </div>
+
+        <!-- // Navigation -->
+
+        <div class="lining">
+
+          <div class="scene_element scene_element--fadein">
+
+
+              <div class="heightset">
+                <div class="fixer"></div>
+                <div class="checker"></div>
+              </div>
+
+
+
+              <div class="introspacer">
+
+                <div class="homecontainer">
+
+                  <section class="home-intro" style="background-image: url(images/type2.jpg);">
+
+                    <div class="home-intro-copy">
+
+                      <div class="liner">Instaverse</div>
+
+                      <h1 class="slabtextdone">a Picture</h1>
+                      <h1 class="slabtextdone little">is worth a thousand</h1>
+                      <h1 class="slabtextdone big">Words</h1>
+
+                      <div class="cta">
+
+                        <a ng-click="instagramLogin()" class="button">Sign in Via Instagram</a>
+
+                        <button class="btn btn-block btn-instagram" ng-click="instagramLogin()">
+                              <i class="ion-social-instagram"></i> Sign in with Instagram
+                        </button>
+
+                      </div>
+
+                    </div>
+
+
+
+
+                  </section>
+
+                </div>
+
+              </div>
+
+
+
+
+        <section class="postlist">
+
+          <div class="instawelcome">
+
+            <div class="container">
+
+              <div class="leftwelcome">
+
+                <h2>inspired storytelling, beyond timelines</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar ultrices nibh ac porta. Mauris magna ligula, mattis laoreet diam in, hendrerit consectetur augue. Morbi sed magna aliquam, tempus arcu et, fermentum augue. Aliquam sem massa, dignissim euismod massa sit amet, blandit pellentesque sapien. Fusce bibendum in dui ut volutpat. Sed vel aliquet odio. </p>
+
+                <h3><a href="#" class="button">Sign in via instagram</a>&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;o<a href="#">Preorder Vol 1</a></h3>
+                <a ng-click="instagramLogin()" class="button">Sign in Via Instagram</a>
+
+
+              </div>
+
+              <div class="rightwelcome">
+
+                <a href="#"><img src="images/book.png" alt="Instaverse Publication" class="instabook /"></a>
+
+              </div>
+            </div>
+
+          </div>
+
+
+
+          <div ng-controller="VerseCtrl">
+
+
+          <div class="querybar">
+
+            <div class="searcher">
+
+              <input class="silentsearch" type="text" placeholder="Search and find what you need"/>
+
+            </div>
+
+            <ul class="dripper">
+
+              <li>
+                <a href="#" class="filter" data-filter="all">Filter by Category</a>
+                <ul class="drip">
+                  <li><a href="#">Oldest Essays</a>
+                    <ul class="drop">
+                      <li><a class="filter" data-filter="webdesign" href="page.html">By Popularity</a></li>
+                      <li><a href="#">Category</a></li>
+                      <li><a href="#">Category</a></li>
+                      <li><a href="#">Category</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">By Popularity</a>
+                    <ul class="drop">
+                      <li><a href="#">By Popularity</a></li>
+                      <li><a href="#">Category</a></li>
+                      <li><a href="#">Category</a></li>
+                      <li><a href="#">Category</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Category</a></li>
+                  <li><a href="#">Category</a></li>
+                  <li><a href="#">Category</a></li>
+                  <li><a href="#">WISHYAJDjsdjfsdf</a>
+                    <ul class="drop">
+                      <li><a href="#">By Popularity</a></li>
+                      <li><a href="#">Category</a></li>
+                      <li><a href="#">Category</a></li>
+                      <li><a href="#">Category</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <div class="clear"></div>
+
+          </div>
+
+          <div class="posts">
+
+            <div ng-repeat="verse in verses | filter:query | orderBy: 'title' "  class="post count1 webdesign">
+
+              <div class="whyhello">
+
+                <p class="date">09 09 14</p>
+
+                <h3><a href="#/verse/{{verse._id}}">{{verse.title}}</a></h3>
+
+              </div>
+
+
+              <div class="dearfriend">
+
+                <div class="p-lining">
+
+                  <p class="date">09 09 14</p>
+
+                  <h3><a href="#/verse/{{verse._id}}">{{verse.title}}</a></h3>
+
+                  <p class="auth"><a href="#/verse/{{verse._id}}">Cornelius Hosea Campbell</a></p>
+
+                  <h4 class="cats">In <a href="#">Thoughts. Essays, Happiness</a></h4>
+
+                </div>
+
+                <a href="#/verse/{{verse._id}}" class="letsgo"><i class="flaticon-back28"></i></a>
+
+
+              </div>
+
+              <div class="innerpost" style="background-image: url({{verse.versephoto}});"></div>
+
+            </div>
+
+
+
+
+
+
+          </div>
+
+          <div class="clear"></div>
+
+
+
+          </div>
+
+        </section>
+
+        <section class="footer">
+          <h2></h2>
+        </section>
+
+      </div><!-- end lining -->

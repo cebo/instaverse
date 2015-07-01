@@ -1,0 +1,207 @@
+<!doctype html>
+<html ng-app="Instagram">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instaverse</title>
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!--<link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/sweet-alert.css">-->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link data-require="font-awesome@*" data-semver="4.3.0" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/angular.textangular/1.3.7/textAngular.css">
+   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+  <!-- dependents -->
+  <link href="css/slabtext.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="css/keyframes.css">
+  <link rel="stylesheet" href="css/pageTransitions.css">
+  <link rel="stylesheet" href="css/carousel.css" />
+  <link href="css/lightbox.css" rel="stylesheet" />
+
+  <!-- responsive style -->
+  <link rel="stylesheet" type="text/css" href="css/media.css">
+
+</head>
+<body>
+
+
+
+<div class="wrapper">
+
+
+  <!-- Preloader -->
+
+  <div id="preloader">
+
+    <div id="status"></div>
+
+  </div>
+
+
+
+<div ng-controller="NavbarCtrl" class="navbar navbar-default navbar-static-top">
+
+    <section class="rightnav">
+
+      <div class="navigations">
+
+        <ul class="nav navbar-nav">
+            <a href="/" class="navbar-brand"><i class="ion-images"></i> Instagram</a>
+              <li><a href="#/">Home</a></li>
+              <li ng-if="!isAuthenticated()"><a href="#/login">Log in</a></li>
+              <li ng-if="!isAuthenticated()"><a href="#/signup">Sign up</a></li>
+              <li ng-if="isAuthenticated()"><a ng-click="logout()" href="">Logout</a></li>
+            </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li ng-if="isAuthenticated() && currentUser.username">
+        <a href="http://instagram.com/{{currentUser.username}}">
+          <img class="media-object img-rounded" ng-src="{{currentUser.picture}}">
+          @{{currentUser.username}}
+        </a>
+      </li>
+    </ul>
+
+        <ul>
+          <li><a href="#">home</a></li>
+          <li><a href="#">about</a></li>
+          <li class="indented">
+            <a href="#">all essays</a>
+            <ul class="subnav">
+              <li><a href="#">home</a></li>
+              <li><a href="#">about</a></li>
+              <li><a href="#">all essays</a></li>
+              <li><a href="#">portfolio</a></li>
+              <li><a href="#">featured</a></li>
+              <li><a href="#">contact</a></li>
+            </ul>
+          </li>
+          <li><a href="#">portfolio</a></li>
+          <li><a href="#">featured</a></li>
+          <li><a href="#">contact</a></li>
+        </ul>
+      </div>
+
+      <div class="socializer">
+
+        <ul>
+          <li><a href="#" class="flaticon-facebook51"></a></li>
+          <li><a href="#" class="flaticon-twitter44"></a></li>
+          <li><a href="#" class="flaticon-facebook51"></a></li>
+          <li><a href="#" class="flaticon-twitter44"></a></li>
+          <li><a href="#" class="flaticon-facebook51"></a></li>
+          <li><a href="#" class="flaticon-twitter44"></a></li>
+          <span style="display: block;" class="clear"></span>
+        </ul>
+
+      </div>
+      <div class="clear"></div>
+
+      <div class="widgets">
+
+        <form action="/" method="get" style="position: relative;">
+            <fieldset>
+                <input type="text" name="s" id="search" placeholder="Search…" value="" style="width: 89%">
+            <i class="fa fa-search"></i>
+            </fieldset>
+        </form>
+
+      </div>
+
+
+
+
+      <div class="widgets">
+
+        <h2>Buy My Latest Book</h2>
+
+        <div class="showcase">
+
+          <a href="#" class="dropanchor"><img src="images/4.jpg" alt="book title"/></a>
+
+          <h3><a href="#">The Occasion of Living</a></h3>
+
+          <a href="#" class="button">Buy It</a>
+          <a href="#" class="button">Preview It</a>
+
+        </div>
+
+
+      </div>
+
+
+
+
+      <div class="widgets">
+
+        <h2>Instagram</h2>
+
+        <div id="instafeed"></div>
+
+
+      </div>
+
+
+      <p class="copyright">&copy; Scribe - 2014, by <a href="#">Cebo Campbell</a></p>
+
+      <div class="spacer"></div>
+
+    </section><!-- end right nav -->
+
+</div><!-- end early nav -->
+
+
+
+  <div ng-if="!isAuthenticated()">
+
+
+            <div ng-view></div>
+
+
+  </div>
+
+  <div ng-if="isAuthenticated()">
+
+      <div data-ng-include data-src="'partials/dashboard.html'"></div>
+
+   </div>
+
+
+
+</div><!-- end wrapper -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="controllers/assets/jquery.smoothState.js"></script>
+<script src="controllers/assets/jquery.slabtext.min.js"></script>
+<script src="controllers/assets/view.js" type="text/javascript" charset="utf-8"></script>
+<script src="controllers/assets/jquery.sticky-kit.js"></script>
+<script src="controllers/assets/jquery.touchcarousel-1.2.js"></script>
+<script src="controllers/assets/home-execute.js"></script>
+
+
+<script src="vendor/angular.js"></script>
+<script src="vendor/angular-route.js"></script>
+<script src="vendor/angular-messages.js"></script>
+<script src="vendor/sweet-alert.js"></script>
+<script src="vendor/satellizer.js"></script>
+<script src="node_modules/angular-resource/angular-resource.js"></script>
+
+<script src="app.js"></script>
+<script src="services/api.js"></script>
+<script src="services/verse.js"></script>
+<script src="directives/serverError.js"></script>
+<script src="controllers/home.js"></script>
+<script src="controllers/navbar.js"></script>
+<script src="controllers/login.js"></script>
+<script src="controllers/signup.js"></script>
+<script src="controllers/detail.js"></script>
+<script src="controllers/verse.js"></script>
+
+<script src="https://cdn.jsdelivr.net/g/angular.textangular@1.3.7(textAngular-rangy.min.js+textAngular-sanitize.min.js+textAngular.min.js)"></script>
+
+<!--<script src="app.min.js"></script>-->
+</body>
+</html>

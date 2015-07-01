@@ -1,0 +1,95 @@
+ <div class="side">
+
+    <a href="#"> <img ng-src="{{currentUser.picture}}"></a>
+    <ul class="stats">
+      <li class="button"><a href="#">Contribute A Verse</a></li>
+      <li><a href="#"><span>8</span>verses</a></li>
+      <li><a href="#"><span>1,812</span>Followers</a></li>
+      <li><a href="#"><span>231</span>Following</a></li>
+      <li><a href="#">26 Favorites</a></li>
+      <li><a href="#">18 Dogears</a></li>
+       <li ng-if="isAuthenticated()"><a ng-click="logout()" href="">Logout</a></li>
+      <li><a href="#/search">Photos</a></li>
+      <li><a href="#/verse">Verses</a></li>
+    </ul>
+
+  </div>
+
+</div>
+
+<div class="contain">
+
+      <!--<div ng-view></div>-->
+
+
+      <div class="container">
+
+            <div class="nav">
+
+                  <div class="topbar">
+                      <a href="#" class="close ion-ios-arrow-thin-left"></a>
+                      <a href="#" class="settings ion-ios-gear"></a>
+                      <a href="" class="logo">Instaverse</a>
+                      <!--<li><a href="#/">Home</a></li>
+                      <li ng-if="!isAuthenticated()"><a href="#/login">Log in</a></li>
+                      <li ng-if="!isAuthenticated()"><a href="#/signup">Sign up</a></li>
+                      <li ng-if="isAuthenticated()"><a ng-click="logout()" href="">Logout</a></li>
+                       <li><a href="#/verse">Verses</a></li>
+                        <li><a href="#/search">Photos</a></li>-->
+                  </div>
+
+                  <div class="bottombar">
+
+                        <a href="#" class="plus ion-ios-plus-empty" data-pack="default" data-tags=""></a>
+                        <div class="searchy">
+                            <input type="text" placeholder="Search Your Verses">
+                        </div>
+
+                        <ul class="switcher">
+                          <li><a href="#">Published</a></li>
+                          <li><a href="#">Unpublished</a></li>
+                        </ul>
+
+                        <div class="clear"></div>
+
+                  </div>
+
+            </div>
+
+
+              <div ng-controller="VerseCtrl">
+
+  <div ng-if="isAuthenticated() && currentUser.username">
+   <div class="instas">
+
+
+                <div class="insta" ng-repeat="verse in verses | filter:query | orderBy: 'title' ">
+
+                   <a href="#/verse/{{verse._id}}">
+                    <div class="title">{{verse.title}}</div>
+
+                    <div class="instavers">
+
+                        <h1><span>w: cebocampbell</span>{{verse.title}}</h1>
+                        <p class="author">p: neongeomatrix</p>
+
+                    </div>
+                      <img ng-src="{{verse.versephoto}}" class="thumbnail img-responsive">
+                    </a>
+                </div>
+
+
+
+        </div>
+   </div>
+
+</div>
+
+
+
+
+
+
+ </div>
+
+</div>

@@ -1,0 +1,13 @@
+
+
+  <div ng-if="!isAuthenticated()">
+
+       <div data-ng-include data-src="'partials/homepage.html'"></div>
+
+  </div>
+
+  <div ng-if="isAuthenticated()">
+
+      <div data-ng-include data-src="'partials/dashboard.html'"></div>
+
+   </div>

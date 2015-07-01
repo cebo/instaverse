@@ -1,0 +1,22 @@
+<div class="container">
+
+    <div ng-controller="VerseCtrl">
+    <div class="row">
+
+      <form class="form-inline">
+      <input ng-model="query" type="text"  placeholder="Filter by" autofocus>
+    </form>
+
+
+
+      <div ng-repeat="verse in verses | filter:query | orderBy: 'title' " class="col-lg-2 col-sm-3 col-xs-4">
+        <a href="#/verse/{{verse._id}}">
+          <img ng-src="{{verse.versephoto}}" class="thumbnail img-responsive">
+          <p>{{verse.title}}</p>
+        </a>
+
+      </div>
+    </div>
+    </div>
+
+</div>
